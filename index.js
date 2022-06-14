@@ -1,6 +1,15 @@
 const express=require('express');
-const path=require('path')
+const path=require('path');
+require('dotenv').config();
+
+
 const app= express();
+
+
+//node server 
+const server= require('http').createServer(app);
+module.exports.io = require('socket.io')(server);
+require('./sockets/socket')
 
 
 //entrada publica -path
@@ -8,7 +17,7 @@ const publicPath = path.resolve(__dirname,'public')
 app.use(express.static(publicPath))
 
 
-app.listen(3000,(error)=>{
+server.listen(process.env.PORT,(error)=>{
     if(error)throw new Error(error)
-    console.log('Servidor corriedo en el puerto :',3000);
+    console.log('Servidor corriedo en el puerto :',process.env.PORT);
 });
