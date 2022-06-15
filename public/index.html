@@ -20,7 +20,8 @@
         })
 
         cliente.emit('mensaje',{nombre:'Wilson'})
-        cliente.on('mensaje',function(payload){
+        
+        cliente.on('nuevo-mensaje',function(payload){
             console.log('Escuchando:',payload)
         })
 
