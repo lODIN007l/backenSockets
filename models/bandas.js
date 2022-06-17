@@ -1,4 +1,4 @@
-
+const Banda =require('./banda');
 
 
 class Bandas{

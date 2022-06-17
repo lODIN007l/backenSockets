@@ -25,6 +25,10 @@
             console.log('Escuchando:',payload)
         })
 
+        cliente.on('bandas-registradas',function(bandass){
+            console.clear();
+            console.table(bandass)
+        })
 
 
     </script>
